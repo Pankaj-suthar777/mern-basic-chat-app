@@ -8,8 +8,9 @@ import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectDb.js";
 
-const app = express();
 const PORT = 5000;
+
+import { app, server } from "./socket/socket.js";
 
 dotenv.config();
 
@@ -20,7 +21,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectToMongoDB();
   console.log(`Server is listing to port ${PORT}`);
 });
