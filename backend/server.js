@@ -15,7 +15,7 @@ import { app, server } from "./socket/socket.js";
 
 dotenv.config();
 
-const __dirname = path.resolve;
+const __dirname = path.resolve();
 
 app.use(cookieParser());
 app.use(express.json());
