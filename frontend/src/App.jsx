@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <div className="p-4 h-screen flex items-center justify-center">
+      <div className="p-4 bg-#2E8B57  flex items-center justify-center h-screen">
         <Routes>
           <Route
             path="/"

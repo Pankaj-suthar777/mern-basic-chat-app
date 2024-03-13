@@ -3,13 +3,19 @@ import SearchInput from "./SearchInput";
 import Conversations from "./Conversations";
 import LogoutButton from "./LogoutButton";
 
-const Sidebar = () => {
+const Sidebar = ({ selectedConversation, setSelectedConversation }) => {
   return (
-    <div className="border-r border-slate-500 p-4 flex flex-col">
+    <div
+      className={`r border-slate-500 p-4 flex flex-col sm:block ${
+        selectedConversation ? "hidden" : ""
+      } `}
+    >
       <SearchInput />
       <div className="divider px-3"></div>
       <Conversations />
-      <LogoutButton />
+      <div className="absolute bottom-0">
+        <LogoutButton />
+      </div>
     </div>
   );
 };
